@@ -1,0 +1,13 @@
+{
+  "name": "docx-to-markdown-spec",
+  "owner": {
+    "name": "Charles Kuncheria"
+  },
+  "plugins": [
+    {
+      "name": "docx-to-markdown-spec",
+      "source": ".",
+      "description": "Convert .docx feature specs into structured markdown product specifications"
+    }
+  ]
+}
