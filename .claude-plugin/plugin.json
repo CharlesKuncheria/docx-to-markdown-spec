@@ -1,0 +1,8 @@
+{
+  "name": "docx-to-markdown-spec",
+  "description": "Convert .docx feature specification documents into structured markdown product specs",
+  "version": "1.0.0",
+  "author": {
+    "name": "Charles Kuncheria"
+  }
+}
