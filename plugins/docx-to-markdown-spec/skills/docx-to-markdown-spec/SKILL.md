@@ -6,7 +6,11 @@ Converts a `.docx` feature specification document into a structured markdown pro
 
 Invoke this skill when the user asks to convert a `.docx` file to a feature spec, or says things like "convert this spec", "generate spec from docx", "docx to markdown spec".
 
-The user will provide a path to a `.docx` file.
+The user will provide:
+- A path to a `.docx` file (required)
+- Optionally, a path to a **template file** (`.md`) that defines the desired output sections and structure
+
+If no template is provided, the default sections listed below are used.
 
 ## Steps
 
@@ -22,7 +26,9 @@ The script auto-installs its dependencies (mammoth, turndown) on first run. Capt
 
 ### Step 2: Convert to structured spec
 
-Using the extracted content, generate a structured product specification with these sections:
+**If the user provided a template file**, read the template and use its sections, headings, and structure as the blueprint for the output. Populate each section from the template using the extracted `.docx` content. Preserve the template's heading hierarchy, section order, and any formatting instructions or placeholder text within the template.
+
+**If no template is provided**, use the following default sections:
 
 1. **Executive Summary** — Brief overview (2-3 sentences)
 2. **Problem Statement** — What problem, why important, who is affected

@@ -6,6 +6,8 @@ Unlike generic file converters, this plugin doesn't just convert formats — it 
 
 ## What it generates
 
+By default, the plugin generates these sections:
+
 | Section | Description |
 |---------|-------------|
 | Executive Summary | Brief overview (2-3 sentences) |
@@ -19,6 +21,8 @@ Unlike generic file converters, this plugin doesn't just convert formats — it 
 | Scope | What we are explicitly NOT doing |
 | Dependencies & Constraints | Existing features, teams, timeline |
 | Open Questions | Unresolved items needing clarification |
+
+You can override these sections by providing a **template file** (see [Custom Templates](#custom-templates) below).
 
 ## Installation
 
@@ -47,6 +51,40 @@ Then provide the path to your `.docx` file. The plugin will:
 1. Extract content from the `.docx` using mammoth (docx → HTML) and turndown (HTML → Markdown)
 2. Restructure it into a formatted product specification
 3. Save the `.md` file in the same directory as the source
+
+## Custom Templates
+
+You can optionally provide a **template file** (`.md`) to define your own output structure instead of the default sections.
+
+```
+/docx-to-markdown-spec
+```
+
+When prompted, provide both:
+- The path to your `.docx` file
+- The path to your template `.md` file
+
+The template should be a markdown file with the headings and structure you want in the output. The plugin will use your template's sections, heading hierarchy, and formatting as the blueprint, and populate each section using the content extracted from the `.docx`.
+
+### Example template
+
+```markdown
+# Project Name
+
+## Overview
+<!-- Brief summary of the project -->
+
+## Requirements
+<!-- Numbered list of requirements -->
+
+## Timeline
+<!-- Key milestones and dates -->
+
+## Risks
+<!-- Known risks and mitigations -->
+```
+
+If no template is provided, the plugin falls back to the [default sections](#what-it-generates).
 
 ## Dependencies
 
