@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "docx-to-markdown-spec",
-      "source": ".",
+      "source": "./plugins/docx-to-markdown-spec",
       "description": "Convert .docx feature specs into structured markdown product specifications"
     }
   ]
